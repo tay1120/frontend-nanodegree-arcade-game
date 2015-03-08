@@ -28,6 +28,9 @@ Enemy.prototype.render = function() {
 var Player = function() {
     // Add image for player
     this.sprite = 'images/char-horn-girl.png';
+    // Place player on board
+    this.x = 200;
+    this.y = 400;
 }
 
 //Add player update
