@@ -30,6 +30,15 @@ var Player = function() {
     this.sprite = 'images/char-horn-girl.png';
 }
 
+//Add player update
+Player.prototype.update = function(dt) {
+}
+
+//Add player render
+Player.prototype.render = function() {
+     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
