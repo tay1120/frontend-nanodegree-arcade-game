@@ -10,6 +10,9 @@ var Enemy = function() {
     this.y = 70;
     this.x = -105;
 
+    //Add enemy placement across the stone blocks
+    this.isPlacement = [60, 150, 230];
+
     //Add enemy speed
     this.speed = (Math.random() *  (400-100)) + 50;
 }
@@ -21,6 +24,12 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x = this.x + this.speed * dt;
+
+    //Randomize enemy location and reload more enemies
+    if (this.x > 500) {
+        this.x = -125;
+        this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
+        }
 }
 
 // Draw the enemy on the screen, required method for game
