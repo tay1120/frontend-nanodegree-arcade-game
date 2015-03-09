@@ -54,6 +54,12 @@ var Player = function() {
 Player.prototype.update = function(dt) {
 }
 
+// Add player reset function when collisions with enemies
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 400;
+}
+
 // Add player render
 Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
