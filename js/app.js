@@ -5,15 +5,16 @@ var Enemy = function() {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+    // Add enemy image
     this.sprite = 'images/enemy-bug.png';
-    //Place enemy on board
+    // Place enemy on board
     this.y = 70;
     this.x = -105;
 
-    //Add enemy placement across the stone blocks
+    // Add enemy placement across the stone blocks
     this.isPlacement = [60, 150, 230];
 
-    //Add enemy speed
+    // Add enemy speed
     this.speed = (Math.random() *  (400-100)) + 50;
 }
 
@@ -25,11 +26,11 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     this.x = this.x + this.speed * dt;
 
-    //Randomize enemy location and reload more enemies
+    // Randomize enemy location and reload more enemies
     if (this.x > 500) {
         this.x = -125;
         this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
-        }
+    }
 }
 
 // Draw the enemy on the screen, required method for game
@@ -40,7 +41,7 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-//Add player class
+// Add player class
 var Player = function() {
     // Add image for player
     this.sprite = 'images/char-horn-girl.png';
@@ -49,16 +50,16 @@ var Player = function() {
     this.y = 400;
 }
 
-//Add player update
+// Add player update
 Player.prototype.update = function(dt) {
 }
 
-//Add player render
+// Add player render
 Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-//Add player handleInput
+// Add player handleInput
 Player.prototype.handleInput = function(key) {
     if (key === "up") {
         if (this.y - 83 >= -15) {
