@@ -31,6 +31,12 @@ Enemy.prototype.update = function(dt) {
         this.x = -125;
         this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
     }
+
+    // Create bounding box for enemy
+    this.left = this.x;
+    this.top = this.y;
+    this.right = this.x + 50;
+    this.bottom = this.y + 50;
 }
 
 // Draw the enemy on the screen, required method for game
@@ -52,6 +58,11 @@ var Player = function() {
 
 // Add player update
 Player.prototype.update = function(dt) {
+    // Create bounding box for player
+    this.left = this.x;
+    this.top = this.y;
+    this.right = this.x + 50;
+    this.bottom = this.y + 50;
 }
 
 // Add player reset function when collisions with enemies
