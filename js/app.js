@@ -58,6 +58,11 @@ var Player = function() {
 
 // Add player update
 Player.prototype.update = function(dt) {
+    // Reset player if touching the water
+    if (this.top < 0) {
+        this.reset();
+    }
+
     // Create bounding box for player
     this.left = this.x;
     this.top = this.y;
