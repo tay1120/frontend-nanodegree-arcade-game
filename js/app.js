@@ -127,3 +127,17 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Add checkCollision function for player and ememy
+function checkCollisions () {
+allEnemies.forEach(function(enemy) {
+         if(enemy.x < player.x + 50 &&
+            enemy.x + 50 > player.x &&
+            enemy.y < player.y + 50 &&
+            enemy.y + 50 > player.y) {
+
+                player.reset();
+            }
+        });
+
+}
