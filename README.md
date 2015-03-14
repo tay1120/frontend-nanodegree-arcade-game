@@ -1,6 +1,9 @@
 frontend-nanodegree-arcade-game
 ===============================
-RULES:
+HOW TO RUN GAME:
+	Open the game by clicking on the index.html file and opening in an internet browser such as Internet Explorer or Google Crome. Enjoy the game!!!!
+	
+GAME RULES:
 	1. User computer up/down/left/right arrow keys to move the player across the board.
 	2. Avoid touching enemy bugs as that looses the game.
 	2. Make it safely to the water to win
@@ -10,7 +13,7 @@ Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015
 
 for self-checking their submission.
 
-Project Resources:
+PROJECT RESOURCES:
 
 https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/edit
 http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html
