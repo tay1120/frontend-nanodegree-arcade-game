@@ -16,7 +16,7 @@ var Enemy = function() {
 
     // Add enemy speed
     this.speed = (Math.random() *  (400-100)) + 50;
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -29,7 +29,7 @@ Enemy.prototype.update = function(dt) {
     // Randomize enemy location and reload more enemies
     if (this.x > 500) {
         this.x = -125;
-        this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
+        this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];
     }
 
     // Create bounding box for enemy
@@ -37,12 +37,12 @@ Enemy.prototype.update = function(dt) {
     this.top = this.y;
     this.right = this.x + 50;
     this.bottom = this.y + 50;
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -54,7 +54,7 @@ var Player = function() {
     // Place player on board
     this.x = 200;
     this.y = 400;
-}
+};
 
 // Add player update
 Player.prototype.update = function(dt) {
@@ -68,18 +68,18 @@ Player.prototype.update = function(dt) {
     this.top = this.y;
     this.right = this.x + 50;
     this.bottom = this.y + 50;
-}
+};
 
 // Add player reset function when collisions with enemies
 Player.prototype.reset = function() {
     this.x = 200;
     this.y = 400;
-}
+};
 
 // Add player render
 Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Add player handleInput
 Player.prototype.handleInput = function(key) {
@@ -100,19 +100,19 @@ Player.prototype.handleInput = function(key) {
             this.x = this.x - (101);
         }
     }
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-var Enemy1 = new Enemy;
-var Enemy2 = new Enemy;
-var Enemy3 = new Enemy;
-var Enemy4 = new Enemy;
-var Enemy5 = new Enemy;
+var Enemy1 = new Enemy();
+var Enemy2 = new Enemy();
+var Enemy3 = new Enemy();
+var Enemy4 = new Enemy();
+var Enemy5 = new Enemy();
 var allEnemies = [Enemy1,Enemy2,Enemy3,Enemy4,Enemy5];
 
 // Place the player object in a variable called player
-var player = new Player;
+var player = new Player();
 
 
 // This listens for key presses and sends the keys to your
@@ -128,7 +128,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// Add checkCollision function for player and ememy
+// Add player reset function when touching enemy
 function checkCollisions () {
 allEnemies.forEach(function(enemy) {
          if(enemy.x < player.x + 50 &&
